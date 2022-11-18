@@ -1,0 +1,93 @@
+footer {
+    background-color: #fff;
+    font-family: "Open Sans";
+    padding: 1rem 1rem 0 1rem;
+    width: 100%;
+    h2{
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 0 0 0.5rem 0;
+    }
+
+    .footer-menu {
+        background-color: #f1f1f1;
+        border-radius: 0.25rem 0.25rem 0 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+        ul {
+            list-style: none;
+            padding: 0;
+            font-size: 0.75rem;
+            margin-top: 0;
+            a{
+                color:#383838;
+                text-decoration: none;
+                padding: 0.25rem 0;
+                display: inline-block;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+            .link{
+                a{
+                    display: block;
+                    padding-left: 1.5rem;
+                }
+                &.facebook{
+                    a{
+                    background: url(assets/images/facebook-brands.svg) left center no-repeat;
+                    }
+                }
+                &.instagram{
+                    a{
+                    background: url(assets/images/instagram-brands.svg) left center no-repeat;
+                    }
+                }
+                &.youtube{
+                    a{
+                    background: url(assets/images/youtube-brands.svg) left center no-repeat;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .footer-ifpr{
+        background-color: #525252;
+        color: #f1f1f1;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+        border-bottom: 1rem solid #309F41 ;
+        p{
+            margin: 0;
+            font-size: 0.75rem;
+        }
+        figure{
+            margin: 0 0 1rem 0;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            font-size: 0.75rem;
+            margin-top: 0;
+            a{
+                color:#f1f1f1;
+                text-decoration: none;
+                padding: 0.25rem 0;
+                display: block;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+#marca-ifpr-footer{
+    max-width: 10rem;
+}

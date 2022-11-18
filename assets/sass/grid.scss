@@ -1,0 +1,162 @@
+/*------------------------------------
+
+Grid 3 colunas
+
+------------------------------------*/
+
+.grid-3col {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
+    grid-gap: 1rem;
+    margin-bottom: 2rem;
+    max-width: 825px;
+
+    .card-estagios {
+        border: 1px solid var(--cinza-claro-dark);
+        border-radius: 0.25rem;
+        padding: 1rem;
+    }
+
+    p {
+        margin: 0;
+        line-height: 1.25;
+    }
+
+    .small {
+        color: var(--verde-escuro);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+    }
+
+    p+.small,
+    h3+.small {
+        margin: 1rem 0 0 0;
+    }
+
+    .btn {
+        margin-top: 1rem;
+        padding: 0;
+        width: 100%;
+    }
+
+    .btn a {
+        background-color: var(--verde-escuro);
+        border-radius: 0.25rem;
+        color: #fff;
+        display: block;
+        padding: 5px 0;
+        text-decoration: none;
+    }
+
+
+}
+
+/*------------------------------------
+
+Grid 2 Colunas
+
+------------------------------------*/
+
+
+.grid-quem-e-quem,
+.grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(264px, 1fr));
+    grid-gap: 1rem;
+    max-width: 822px;
+
+    +h2 {
+        margin-top: 2rem;
+    }
+
+    .cartao,
+    .cartao-new .wp-block-group__inner-container {
+        border: solid 1px var(--cinza);
+        border-radius: 0.25rem;
+        column-gap: 1rem;
+        display: grid;
+        grid-template-columns: 80px 1fr 1fr;
+        grid-template-areas:
+            "foto nome nome"
+            "foto cargo cargo"
+            "foto email email"
+            "foto fone fone"
+            "foto endereco endereco"
+            "foto link link";
+        padding: 1rem;
+
+        img,
+        figure {
+            border-radius: 50%;
+            grid-area: foto;
+            justify-self: center;
+            margin: auto 0;
+            width: 80px;
+        }
+
+        p {
+            line-height: 1.25;
+            margin: 0;
+        }
+
+        a {
+            color: var(--cinza-escuro);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .nome {
+            font-size: 1rem;
+            font-weight: bold;
+            grid-area: nome;
+            margin-bottom: 0;
+        }
+
+        .cargo {
+            color: var(--verde-escuro);
+            grid-area: cargo;
+            margin-bottom: 1.5rem;
+        }
+
+        .link-tel {
+            font-size: 0.833rem;
+            grid-area: fone;
+            margin: 0 0 1rem 0;
+        }
+
+        .link-email,
+        .link-web {
+            font-size: 0.833rem;
+            grid-area: email;
+            margin: 0 0 1rem 0;
+        }
+
+        .icone-agenda,
+        .icone-ptd,
+        .icone-cv {
+            font-size: 0.75rem;
+            grid-area: link;
+            margin: 0;
+            display: flex;
+        }
+
+        .link-endereco {
+            font-size: 0.833rem;
+            grid-area: endereco;
+            margin: 0 0 1rem 0;
+            display: flex;
+        }
+
+        .grid-col-1 {
+            grid-column: 2;
+        }
+
+        .grid-col-2 {
+            grid-column: 3;
+        }
+
+    }
+}

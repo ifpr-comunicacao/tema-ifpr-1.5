@@ -1,0 +1,186 @@
+/*------------------------------------
+
+Grid 3 colunas
+
+------------------------------------*/
+.grid-3cl {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(263px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
+  grid-gap: 1rem;
+  max-width: 825px;
+}
+
+.grid-3cl .card-estagios {
+  align-self: baseline;
+  border: 1px solid var(--cinza-claro-dark);
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+
+.grid-3cl p {
+  margin: 0;
+  line-height: 1.25;
+}
+
+.grid-3cl .small {
+  color: var(--verde-escuro);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.grid-3cl p + .small,
+.grid-3cl h3 + .small {
+  margin: 1rem 0 0 0;
+}
+
+.grid-3cl .btn {
+  margin-top: 1rem;
+  padding: 0;
+  width: 100%;
+}
+
+.grid-3cl .btn a {
+  background-color: var(--verde-escuro);
+  border-radius: 0.25rem;
+  color: #fff;
+  display: block;
+  padding: 5px 0;
+  text-decoration: none;
+}
+
+/*------------------------------------
+
+Grid Quem é Quem
+
+------------------------------------*/
+.grid-quem-e-quem {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(263px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
+  grid-gap: 1rem;
+  max-width: 822px;
+}
+
+@media (min-width: 992px) {
+  .grid-quem-e-quem {
+    -ms-grid-columns: (minmax(264px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(264px, 1fr));
+  }
+}
+
+.grid-quem-e-quem .cartao {
+  border: solid 1px var(--cinza-claro);
+  border-radius: 0.25rem;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "foto foto" "nome nome" "cargo cargo" "email email" "fone fone" "cv-cl1 cv-cl1" "agenda cv";
+  padding: 1rem;
+}
+
+@media (min-width: 992px) {
+  .grid-quem-e-quem .cartao {
+    -ms-grid-columns: 1fr 1.5fr 1.5fr;
+        grid-template-columns: 1fr 1.5fr 1.5fr;
+        grid-template-areas: "foto nome nome" "foto cargo cargo" "foto email email" "foto fone fone" "foto cv-cl1 cv-cl1" "foto agenda cv";
+  }
+}
+
+.grid-quem-e-quem .cartao img,
+.grid-quem-e-quem .cartao figure {
+  border-radius: 50%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: foto;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: auto 0;
+  width: 80px;
+}
+
+.grid-quem-e-quem .cartao p {
+  line-height: 1.25;
+  text-align: center;
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  .grid-quem-e-quem .cartao p {
+    text-align: left;
+  }
+}
+
+.grid-quem-e-quem .cartao a {
+  color: var(--cinza-escuro);
+  text-decoration: none;
+}
+
+.grid-quem-e-quem .cartao a:hover {
+  text-decoration: underline;
+}
+
+.grid-quem-e-quem .cartao .nome {
+  font-size: 1rem;
+  font-weight: bold;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: nome;
+  margin-bottom: 0.5rem;
+}
+
+.grid-quem-e-quem .cartao .cargo {
+  color: var(--verde-escuro);
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: cargo;
+}
+
+.grid-quem-e-quem .cartao .link-tel {
+  font-size: 0.75rem;
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: fone;
+  margin-bottom: 0.5rem;
+}
+
+.grid-quem-e-quem .cartao .link-email {
+  font-size: 0.75rem;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: email;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.grid-quem-e-quem .cartao .icone-agenda, {
+  font-size: 0.75rem;
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: agenda;
+}
+
+.grid-quem-e-quem .cartao .icone-cv {
+  font-size: 0.75rem;
+  -ms-grid-row: 7;
+  -ms-grid-column: 2;
+  grid-area: cv;
+}
+
+.grid-quem-e-quem .cartao .icone-cv-cl1 {
+  font-size: 0.75rem;
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: cv-cl1;
+}
+/*# sourceMappingURL=grid.css.map */

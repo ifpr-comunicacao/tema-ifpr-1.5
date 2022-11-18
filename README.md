@@ -1,2 +1,2 @@
-# tema-ifpr-1.5
-Versão atualizada do tema
+# IFPR Wordpress Theme
+ This repository contains the files for the development of the IFPR Wordpress Template

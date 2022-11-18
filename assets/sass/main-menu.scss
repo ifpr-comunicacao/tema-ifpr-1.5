@@ -1,0 +1,107 @@
+.nav-superior {
+    width: 100%;
+    background-color: var(--verde-escuro);
+    border-radius: 0.5rem 0.5rem 0 0.5rem;
+    margin: 0 1rem;
+}
+
+.home {
+    .nav-superior {
+        border-radius: 0.5rem;
+    }
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+
+    li {
+        border-radius: 0.25rem;
+        border: solid 1px var(--verde-escuro);
+        display: inline-block;
+        margin: .25rem 0 .25rem .25rem;
+
+        &:hover {
+            background-color: var(--cinza-claro);
+            border: solid 1px var(--cinza-claro-dark);
+
+            a {
+                color: var(--verde-escuro);
+            }
+        }
+
+        a {
+            font-weight: bold;
+            padding: .5rem 1.5rem;
+        }
+    }
+
+    .menu-item-has-children {
+        position: relative;
+
+        &:hover {
+            border-radius: .25rem .25rem 0 0;
+            padding: .5rem 1.5rem .75rem 1.5rem;
+            margin: .25rem 0 0 .25rem;
+            border-bottom: 0;
+
+            &>a {
+                padding: 0;
+            }
+        }
+    }
+
+    .current-menu-item,
+    .current-menu-parent {
+        background-color: var(--cinza-claro);
+        border: solid 1px var(--cinza-claro-dark);
+
+        a {
+            color: var(--verde-escuro);
+        }
+    }
+
+    li>.sub-menu {
+        border-radius: 0 .25rem .25rem .25rem;
+        left: -1px;
+        margin: 0;
+        padding: 0.25rem;
+        position: absolute;
+        top: 2.75rem;
+        z-index: 15;
+
+        li {
+            border: none;
+            margin: 0 0 0.25rem 0;
+            width: 100%;
+
+            a {
+                border-radius: 0.25rem;
+                color: var(--cinza-escuro);
+                display: block;
+                font-weight: normal;
+                padding: 0.25rem 0.5rem;
+
+                &:hover {
+                    background-color: #fff;
+                }
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        .current-menu-item {
+            a {
+                background-color: var(--verde-escuro);
+                color: #fff;
+
+                &:hover {
+                    background-color: var(--verde-escuro);
+                }
+            }
+        }
+
+    }
+}
