@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+/* ==============================
+ * Utilities | Typography
+ * ------------------------------ */
+.ff-primary {
+  font-family: var(--ff-primary);
+}
+.ff-secondary {
+  font-family: var(--ff-secondary);
+}
+
+.fw-400 {
+  font-weight: var(--fw-400);
+}
+.fw-500 {
+  font-weight: var(--fw-500);
+}
+.fw-700 {
+  font-weight: var(--fw-700);
+}
+
+@each $screen-size, $sizes in $type-scale {
+  @if $screen-size == sm {
+    @each $key, $value in $sizes {
+      .fs-#{$key} {
+        font-size: var(--fs-#{$key});
+      }
+    }
+  }
+}

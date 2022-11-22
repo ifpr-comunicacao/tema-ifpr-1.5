@@ -1,0 +1,19 @@
+@use "../abstracts" as *;
+
+/* ==============================
+ * Base | Global
+ * ------------------------------ */
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-400);
+}
+
+p:not([class]),
+ul:not([class]),
+li:not([class]) {
+  max-width: 60ch;
+}

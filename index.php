@@ -123,9 +123,6 @@
 			</section>
 			<!-- Fim Noticias -->
 
-			<!-- Sidebar Right -->
-			<?php get_template_part("sidebar-right"); ?>
-
 			<!-- Footer -->
 			<?php get_footer(); ?>
 

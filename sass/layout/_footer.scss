@@ -1,4 +1,12 @@
-footer {
+@use '../abstracts' as *;
+
+$borda-footer: map-get($colors, verde, light);
+
+/* ==============================
+ * Layout | Footer
+ * ------------------------------ */
+
+ footer {
     background-color: #fff;
     font-family: "Open Sans";
     padding: 1rem 1rem 0 1rem;
@@ -62,7 +70,7 @@ footer {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 1rem;
         padding: 1rem;
-        border-bottom: 1rem solid #309F41 ;
+        border-bottom: 1rem solid $borda-footer ;
         p{
             margin: 0;
             font-size: 0.75rem;

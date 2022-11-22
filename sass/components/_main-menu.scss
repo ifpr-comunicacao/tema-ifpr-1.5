@@ -1,6 +1,11 @@
+@use "../abstracts" as *;
+
+$menuBkg: map-get($colors, verde, dark);
+
+
 .nav-superior {
     width: 100%;
-    background-color: var(--verde-escuro);
+    background-color: $menuBkg;
     border-radius: 0.5rem 0.5rem 0 0.5rem;
     margin: 0 1rem;
 }

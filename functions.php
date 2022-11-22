@@ -135,7 +135,7 @@ function my_register_sidebars(){
             'id'            => 'nonmodal-rodape',
             'name'          => __( 'Nonmodal', 'ifpr_theme' ),
             'description'   => __( 'Nonmodal do rodap&eacute;.', 'ifpr_theme' ),
-            'before_widget' => '<div class="nonmodal-rodape container-fluid justify-content-center d-flex mt-3">',
+            'before_widget' => '<div class="nonmodal-rodape">',
             'after_widget'  => '<button type="button" class="close ml-3 align-self-start align-self-md-center" data-dismiss="nonmodal-rodape" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></div>',
             'before_title'  => '',
             'after_title'   => '',
@@ -217,30 +217,13 @@ function ifpr_register_styles() {
 	$template_url = get_template_directory_uri();
 	$theme_version = wp_get_theme()->get( 'Version' );
 
-	wp_enqueue_style( 'bootstrap', $template_url . '/assets/css/bootstrap.min.css', array(), '4.4.1', 'all');
 	wp_enqueue_style( 'ifpr-style', get_stylesheet_uri(), array(), $theme_version );
-    wp_enqueue_style('style-test',$template_url . '/style-testing.css', array(), $theme_version , 'all');
-    wp_enqueue_style('grid-test', $template_url . '/grid.css', array(), $theme_version, 'all');
     wp_enqueue_style( 'portal-das-artes', $template_url . '/assets/css/portal-das-artes.css', array(), $theme_version, 'all' );
     wp_enqueue_style( 'pagina-mapa', $template_url . '/assets/css/leaflet.css', array(), $theme_version, 'all' );
-    wp_enqueue_style('component-test', $template_url . '/componentes.css', array(), $theme_version, 'all');
-    wp_enqueue_style('footer-test', $template_url . '/new-footer.css', array(), $theme_version, 'all');
-    wp_enqueue_style('main-menu-test', $template_url . '/main-menu.css', array(), $theme_version, 'all');
 
-    // Font Awesome
-    wp_enqueue_style( 'fontawesome', $template_url . '/assets/css/fontawesome.all.css', array(), $theme_version, 'all');
         // Style Covid
     if ( is_page_template( 'page-covid.php' ) ) {
       wp_enqueue_style( 'covid', $template_url . '/assets/css/covid.css', array(), $theme_version, 'all' );
-    }
-        // Style Difusao
-    if ( is_page_template( 'page-difusao.php' ) ) {
-      wp_enqueue_style( 'difusao', $template_url . '/assets/css/page-difusao.css', array(), $theme_version, 'all' );
-    }
-
-    // Style Semana do Servidor
-    if ( is_page_template( 'category-semana-servidor.php' ) ) {
-        wp_enqueue_style( 'semana-servidor', $template_url . '/assets/css/semana-servidor-foz.css', array(), $theme_version, 'all' );
     }
 
     // Style Catalogo de Laboratorios
@@ -269,15 +252,6 @@ add_action( 'wp_enqueue_scripts', 'ifpr_register_styles' );
     if ( is_page_template( 'page-map.php' ) ) {
       wp_enqueue_script( 'pagina-mapa', $template_url . '/assets/js/leaflet.js', array(), '1.6', false);
     }
-
-    // jQuery Native
-    wp_enqueue_script( 'jquery' );
-
-    // Jquery Theme
-    wp_enqueue_script( 'jquerytheme', $template_url . '/assets/js/jquery.min.js', array(), '3.4.1', true);
-
-    // Bootstrap JS
-    wp_enqueue_script('bootstrapjs', $template_url . '/assets/js/bootstrap.bundle-min.js', array(), '4.4.1', true );
 
     // My JS
     wp_enqueue_script('myjs', $template_url . '/assets/js/scripts.js', array(), '0.1', true );
