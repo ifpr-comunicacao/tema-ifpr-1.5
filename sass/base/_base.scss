@@ -1,19 +1,20 @@
 @use "../abstracts" as *;
+$bkg-color: map-get($colors, cinza, cinza);
 
 /* ==============================
  * Base | Global
  * ------------------------------ */
-body {
-  font-family: var(--ff-body);
-  font-size: var(--fs-400);
-  font-weight: var(--fw-400);
 
-  background-color: var(--clr-neutral-100);
-  color: var(--clr-neutral-400);
+body {
+    font-family: var(--ff-body);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-400);
+    background-color: $bkg-color;
+    color: var(--clr-neutral-400);
 }
 
 p:not([class]),
 ul:not([class]),
 li:not([class]) {
-  max-width: 60ch;
+    max-width: 60ch;
 }

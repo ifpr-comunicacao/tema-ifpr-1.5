@@ -7,7 +7,7 @@
   --clr-verde-normal: #2F9E41;
   --clr-verde-dark: #1C5C27;
   --clr-cinza-branco: hsl(0deg, 0%, 100%);
-  --clr-cinza-cinza: #CCC;
+  --clr-cinza-cinza: #eee;
   --clr-cinza-light: #999;
   --clr-cinza-normal: #666;
   --clr-cinza-dark: #333;
@@ -67,7 +67,7 @@
     /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
 }
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 48em) {
   :root {
     /* font sizes | lg screen */
     --fs-300: 1rem;
@@ -100,7 +100,7 @@ body {
   font-family: var(--ff-body);
   font-size: var(--fs-400);
   font-weight: var(--fw-400);
-  background-color: var(--clr-neutral-100);
+  background-color: #eee;
   color: var(--clr-neutral-400);
 }
 
@@ -164,9 +164,15 @@ picture {
  * Utilities | Composition
  * ------------------------------ */
 .container {
-  --max-width: 60rem;
-  width: min(100% - 2rem, var(--max-width));
+  --max-width: 80rem;
+  background-color: hsl(0deg, 0%, 100%);
+  width: 100%;
   margin-inline: auto;
+}
+@media only screen and (min-width: 48em) {
+  .container {
+    width: min(100% - 2rem, var(--max-width));
+  }
 }
 
 .flow > *:where(:not(:first-child)) {
@@ -285,7 +291,6 @@ picture {
   width: 100%;
   background-color: #1C5C27;
   border-radius: 0.5rem 0.5rem 0 0.5rem;
-  margin: 0 1rem;
 }
 
 .home .nav-superior {
@@ -298,23 +303,29 @@ picture {
 }
 .nav-list li {
   border-radius: 0.25rem;
-  border: solid 1px var(--verde-escuro);
+  border: solid 1px #1C5C27;
   display: inline-block;
   margin: 0.25rem 0 0.25rem 0.25rem;
 }
 .nav-list li:hover {
-  background-color: var(--cinza-claro);
-  border: solid 1px var(--cinza-claro-dark);
+  background-color: #eee;
+  border: solid 1px #999;
 }
 .nav-list li:hover a {
-  color: var(--verde-escuro);
+  color: #1C5C27;
 }
 .nav-list li a {
+  color: hsl(0deg, 0%, 100%);
+  display: block;
   font-weight: bold;
   padding: 0.5rem 1.5rem;
+  text-decoration: none;
 }
 .nav-list .menu-item-has-children {
   position: relative;
+}
+.nav-list .menu-item-has-children .sub-menu {
+  display: none;
 }
 .nav-list .menu-item-has-children:hover {
   border-radius: 0.25rem 0.25rem 0 0;
@@ -325,16 +336,20 @@ picture {
 .nav-list .menu-item-has-children:hover > a {
   padding: 0;
 }
+.nav-list .menu-item-has-children:hover .sub-menu {
+  display: block;
+}
 .nav-list .current-menu-item,
 .nav-list .current-menu-parent {
-  background-color: var(--cinza-claro);
-  border: solid 1px var(--cinza-claro-dark);
+  background-color: #eee;
+  border: solid 1px #999;
 }
 .nav-list .current-menu-item a,
 .nav-list .current-menu-parent a {
-  color: var(--verde-escuro);
+  color: #1C5C27;
 }
 .nav-list li > .sub-menu {
+  background-color: #eee;
   border-radius: 0 0.25rem 0.25rem 0.25rem;
   left: -1px;
   margin: 0;
@@ -350,10 +365,11 @@ picture {
 }
 .nav-list li > .sub-menu li a {
   border-radius: 0.25rem;
-  color: var(--cinza-escuro);
+  color: #333;
   display: block;
   font-weight: normal;
   padding: 0.25rem 0.5rem;
+  white-space: nowrap;
 }
 .nav-list li > .sub-menu li a:hover {
   background-color: #fff;
@@ -362,16 +378,65 @@ picture {
   margin-bottom: 0;
 }
 .nav-list li > .sub-menu .current-menu-item a {
-  background-color: var(--verde-escuro);
+  background-color: #1C5C27;
   color: #fff;
 }
 .nav-list li > .sub-menu .current-menu-item a:hover {
-  background-color: var(--verde-escuro);
+  background-color: #1C5C27;
 }
 
 /* ==============================
  * Layout | Header
  * ------------------------------ */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
+}
+@media only screen and (min-width: 30em) {
+  header .menu-esquerdo__toggle,
+header .busca-btn {
+    display: none;
+  }
+}
+
+.marca-ifpr {
+  text-decoration: none;
+}
+
+#marca-ifpr {
+  height: 4rem;
+}
+
+.st5 {
+  fill: #2F9E41;
+}
+
+.st6 {
+  fill: #B0131B;
+}
+
+.st0,
+.st1,
+.st2 {
+  font-family: var(--ff-primary);
+}
+
+.st0 {
+  font-size: 15.3px;
+  font-weight: 700;
+}
+
+.st1 {
+  font-size: 15.3px;
+  font-weight: 400;
+}
+
+.st2 {
+  font-size: 11.8px;
+}
+
 /* ==============================
  * Layout | Forms
  * ------------------------------ */

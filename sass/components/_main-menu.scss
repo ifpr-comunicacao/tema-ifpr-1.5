@@ -1,13 +1,14 @@
 @use "../abstracts" as *;
-
-$menuBkg: map-get($colors, verde, dark);
-
-
+//Cores
+$branco:map-get($colors, cinza, branco);
+$verde-escuro: map-get($colors, verde, dark);
+$cinza-claro: map-get($colors, cinza, cinza);
+$cinza-normal: map-get($colors, cinza, light);
+$cinza-dark: map-get($colors, cinza, dark);
 .nav-superior {
     width: 100%;
-    background-color: $menuBkg;
+    background-color: $verde-escuro;
     border-radius: 0.5rem 0.5rem 0 0.5rem;
-    margin: 0 1rem;
 }
 
 .home {
@@ -19,54 +20,54 @@ $menuBkg: map-get($colors, verde, dark);
 .nav-list {
     margin: 0;
     padding: 0;
-
     li {
         border-radius: 0.25rem;
-        border: solid 1px var(--verde-escuro);
+        border: solid 1px $verde-escuro;
         display: inline-block;
         margin: .25rem 0 .25rem .25rem;
-
         &:hover {
-            background-color: var(--cinza-claro);
-            border: solid 1px var(--cinza-claro-dark);
-
+            background-color: $cinza-claro;
+            border: solid 1px $cinza-normal;
             a {
-                color: var(--verde-escuro);
+                color: $verde-escuro;
             }
         }
-
         a {
+            color: $branco;
+            display: block;
             font-weight: bold;
             padding: .5rem 1.5rem;
+            text-decoration: none;
         }
     }
-
     .menu-item-has-children {
         position: relative;
-
+        .sub-menu {
+            display: none;
+        }
         &:hover {
             border-radius: .25rem .25rem 0 0;
             padding: .5rem 1.5rem .75rem 1.5rem;
             margin: .25rem 0 0 .25rem;
             border-bottom: 0;
-
             &>a {
                 padding: 0;
             }
+            .sub-menu {
+                display: block;
+            }
         }
     }
-
     .current-menu-item,
     .current-menu-parent {
-        background-color: var(--cinza-claro);
-        border: solid 1px var(--cinza-claro-dark);
-
+        background-color: $cinza-claro;
+        border: solid 1px $cinza-normal;
         a {
-            color: var(--verde-escuro);
+            color: $verde-escuro;
         }
     }
-
     li>.sub-menu {
+        background-color: $cinza-claro;
         border-radius: 0 .25rem .25rem .25rem;
         left: -1px;
         margin: 0;
@@ -74,39 +75,33 @@ $menuBkg: map-get($colors, verde, dark);
         position: absolute;
         top: 2.75rem;
         z-index: 15;
-
         li {
             border: none;
             margin: 0 0 0.25rem 0;
             width: 100%;
-
             a {
                 border-radius: 0.25rem;
-                color: var(--cinza-escuro);
+                color: $cinza-dark;
                 display: block;
                 font-weight: normal;
                 padding: 0.25rem 0.5rem;
-
                 &:hover {
                     background-color: #fff;
                 }
+                white-space: nowrap;
             }
-
             &:last-of-type {
                 margin-bottom: 0;
             }
         }
-
         .current-menu-item {
             a {
-                background-color: var(--verde-escuro);
+                background-color: $verde-escuro;
                 color: #fff;
-
                 &:hover {
-                    background-color: var(--verde-escuro);
+                    background-color: $verde-escuro;
                 }
             }
         }
-
     }
 }

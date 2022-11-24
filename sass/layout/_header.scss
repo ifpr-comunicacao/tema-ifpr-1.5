@@ -1,5 +1,58 @@
 @use "../abstracts" as *;
+$verde-ifpr: map-get($colors, verde, normal);
+$vermelho: map-get($colors, suporte, vermelho);
+$branco: map-get($colors, cinza, branco);
 
 /* ==============================
  * Layout | Header
  * ------------------------------ */
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem;
+    .menu-esquerdo__toggle,
+    .busca-btn {
+        @include mq(sm) {
+            display: none;
+        }
+    }
+}
+
+// MARCA IFPR
+.marca-ifpr {
+    text-decoration: none;
+}
+
+#marca-ifpr {
+    height: 4rem;
+}
+
+.st5 {
+    fill: $verde-ifpr;
+}
+
+.st6 {
+    fill: $vermelho;
+}
+
+.st0,
+.st1,
+.st2 {
+    font-family: var(--ff-primary);
+}
+
+.st0 {
+    font-size: 15.3px;
+    font-weight: 700;
+}
+
+.st1 {
+    font-size: 15.3px;
+    font-weight: 400;
+}
+
+.st2 {
+    font-size: 11.8px;
+}
